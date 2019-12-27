@@ -29,8 +29,8 @@ class mainFrame(wx.Frame):
         btn_mea.Bind(wx.EVT_LEFT_DOWN, self.OnLeftDown)
         btn_mea.Bind(wx.EVT_LEFT_UP, self.OnLeftUp)
         btn_mea.Bind(wx.EVT_MOUSEWHEEL, self.OnMouseWheel)
-        btn_meb.Bind(wx.EVT_LEFT_DOWN, self.OnLeftDown)
-        btn_meb.Bind(wx.EVT_LEFT_UP, self.OnLeftUp)
+        btn_meb.Bind(wx.EVT_LEFT_DOWN, self.OnLeftDown_2)
+        btn_meb.Bind(wx.EVT_LEFT_UP, self.OnLeftUp_2)
         btn_meb.Bind(wx.EVT_MOUSEWHEEL, self.OnMouseWheel)
         # 键盘事件
         self.Bind(wx.EVT_KEY_DOWN, self.OnKeyDown)
@@ -51,13 +51,13 @@ class mainFrame(wx.Frame):
         self.tip.SetLabel("")
     def OnLeftUp(self, evt):
         '''左键弹起事件函数''' 
-        self.tip.SetLabel(jj.e(self.tc1.GetValue()))
+        self.tip.SetLabel(jj.ei(self.tc1.GetValue()))
     def OnLeftDown_2(self, evt):
         '''左键按下事件函数'''
         self.tip.SetLabel("")
     def OnLeftUp_2(self, evt):
         '''左键弹起事件函数''' 
-        self.tip.SetLabel(jj.e(self.tc1.GetValue()))
+        self.tip.SetLabel(jj.di(self.tc1.GetValue()))
     def OnMouseWheel(self, evt):
         '''鼠标滚轮事件函数'''
         vector = evt.GetWheelRotation()
@@ -79,3 +79,4 @@ class mainApp(wx.App):
 if __name__ == "__main__":
     app = mainApp()
     app.MainLoop()
+
